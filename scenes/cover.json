@@ -1,0 +1,244 @@
+{
+    "camera": {
+        "width": 500,
+        "height": 500,
+        "field_of_view": 0.785,
+        "from": [-6.0, 6.0, -10.0],
+        "to": [6.0, 0.0, 6.0],
+        "up": [-0.45, 1.0, 0.0]
+    },
+    "lights": [
+        {
+            "position": [50.0, 100.0, -50.0],
+            "intensity": [1.0, 1.0, 1.0]
+        },
+        {
+            "position": [-400.0, 50.0, -10.0],
+            "intensity": [0.2, 0.2, 0.2]
+        }
+    ],
+    "patterns": {
+        "background-pattern": {
+            "pattern": "checkers",
+            "a": [0.55, 0.75, 0.84],
+            "b": [0.53, 0.81, 0.98],
+            "transformations": [
+                {"transformation": "scale", "parameters": [50.0, 50.0, 50.0]}
+            ]
+        }
+    },
+    "materials": {
+        "white-material": {
+            "color": [1.0, 1.0, 1.0],
+            "diffuse": 0.7,
+            "ambient": 0.1,
+            "specular": 0.0,
+            "reflective": 0.1
+        },
+        "blue-material": {
+            "color": [0.537, 0.831, 0.914],
+            "diffuse": 0.7,
+            "ambient": 0.1,
+            "specular": 0.0,
+            "reflective": 0.1
+        },
+        "red-material": {
+            "color": [0.941, 0.322, 0.388],
+            "diffuse": 0.7,
+            "ambient": 0.1,
+            "specular": 0.0,
+            "reflective": 0.1
+        },
+        "purple-material": {
+            "color": [0.373, 0.404, 0.550],
+            "diffuse": 0.7,
+            "ambient": 0.1,
+            "specular": 0.0,
+            "reflective": 0.1
+        }
+    },
+    "transformations": {
+        "standard-transform": [
+            {"transformation": "scale", "parameters": [0.5, 0.5, 0.5]},
+            {"transformation": "translate", "parameters": [1.0, -1.0, 1.0]}
+        ],
+        "large-object": [
+            {"transformation": "scale", "parameters": [3.5, 3.5, 3.5]},
+            {"transformation": "scale", "parameters": [0.5, 0.5, 0.5]},
+            {"transformation": "translate", "parameters": [1.0, -1.0, 1.0]}
+        ],
+        "medium-object": [
+            {"transformation": "scale", "parameters": [3.0, 3.0, 3.0]},
+            {"transformation": "scale", "parameters": [0.5, 0.5, 0.5]},
+            {"transformation": "translate", "parameters": [1.0, -1.0, 1.0]}
+        ],
+        "small-object": [
+            {"transformation": "scale", "parameters": [2.0, 2.0, 2.0]},
+            {"transformation": "scale", "parameters": [0.5, 0.5, 0.5]},
+            {"transformation": "translate", "parameters": [1.0, -1.0, 1.0]}
+        ]
+    },
+    "objects": {
+        "backdrop": {
+            "shape": "plane",
+            "pattern": "background-pattern",
+            "ambient": 0.5,
+            "diffuse": 0.5,
+            "specular": 0.0,
+            "transformations": [
+                {"transformation": "translate", "parameters": [0.0, 0.0, 500.0]},
+                {"transformation": "rotate-x", "parameters": [90.0]}
+            ]
+        },
+        "a": {
+            "shape": "sphere",
+            "color": [0.373, 0.404, 0.550],
+            "diffuse": 0.2,
+            "ambient": 0.0,
+            "specular": 1.0,
+            "shininess": 200.0,
+            "reflective": 0.7,
+            "transparency": 0.7,
+            "refractive-index": 1.5,
+            "transformations": [
+                {"defined_transformation": "large-object"}
+            ]
+        },
+        "b": {
+            "shape": "cube",
+            "material": "white-material",
+            "transformations": [
+                {"transformation": "translate", "parameters": [4.0, 0.0, 0.0]},
+                {"defined_transformation": "medium-object"}
+            ]
+        },
+        "c": {
+            "shape": "cube",
+            "material": "blue-material",
+            "transformations": [
+                {"transformation": "translate", "parameters": [8.5, 1.5, -0.5]},
+                {"defined_transformation": "medium-object"}
+            ]
+        },
+        "d": {
+            "shape": "cube",
+            "material": "red-material",
+            "transformations": [
+                {"transformation": "translate", "parameters": [0.0, 0.0, 4.0]},
+                {"defined_transformation": "large-object"}
+            ]
+        },
+        "e": {
+            "shape": "cube",
+            "material": "white-material",
+            "transformations": [
+                {"transformation": "translate", "parameters": [4.0, 0.0, 4.0]},
+                {"defined_transformation": "small-object"}
+            ]
+        },
+        "f": {
+            "shape": "cube",
+            "material": "purple-material",
+            "transformations": [
+                {"transformation": "translate", "parameters": [7.5, 0.5, 4.0]},
+                {"defined_transformation": "small-object"}
+            ]
+        },
+        "g": {
+            "shape": "cube",
+            "material": "white-material",
+            "transformations": [
+                {"transformation": "translate", "parameters": [-0.25, 0.25, 8.0]},
+                {"defined_transformation": "medium-object"}
+            ]
+        },
+        "h": {
+            "shape": "cube",
+            "material": "blue-material",
+            "transformations": [
+                {"transformation": "translate", "parameters": [4.0, 1.0, 7.5]},
+                {"defined_transformation": "large-object"}
+            ]
+        },
+        "i": {
+            "shape": "cube",
+            "material": "red-material",
+            "transformations": [
+                {"transformation": "translate", "parameters": [10.0, 2.0, 7.5]},
+                {"defined_transformation": "medium-object"}
+            ]
+        },
+        "j": {
+            "shape": "cube",
+            "material": "white-material",
+            "transformations": [
+                {"transformation": "translate", "parameters": [8.0, 2.0, 12.0]},
+                {"defined_transformation": "small-object"}
+            ]
+        },
+        "b1": {
+            "shape": "cube",
+            "material": "white-material",
+            "transformations": [
+                {"transformation": "translate", "parameters": [20.0, 1.0, 9.0]},
+                {"defined_transformation": "small-object"}
+            ]
+        },
+        "b2": {
+            "shape": "cube",
+            "material": "blue-material",
+            "transformations": [
+                {"transformation": "translate", "parameters": [-0.5, -5.0, 0.25]},
+                {"defined_transformation": "large-object"}
+            ]
+        },
+        "b3": {
+            "shape": "cube",
+            "material": "red-material",
+            "transformations": [
+                {"transformation": "translate", "parameters": [4.0, -4.0, 0.0]},
+                {"defined_transformation": "large-object"}
+            ]
+        },
+        "b4": {
+            "shape": "cube",
+            "material": "white-material",
+            "transformations": [
+                {"transformation": "translate", "parameters": [8.5, -4.0, 0.0]},
+                {"defined_transformation": "large-object"}
+            ]
+        },
+        "b5": {
+            "shape": "cube",
+            "material": "white-material",
+            "transformations": [
+                {"transformation": "translate", "parameters": [0.0, -4.0, 4.0]},
+                {"defined_transformation": "large-object"}
+            ]
+        },
+        "b6": {
+            "shape": "cube",
+            "material": "purple-material",
+            "transformations": [
+                {"transformation": "translate", "parameters": [-0.5, -4.5, 8.0]},
+                {"defined_transformation": "large-object"}
+            ]
+        },
+        "b7": {
+            "shape": "cube",
+            "material": "white-material",
+            "transformations": [
+                {"transformation": "translate", "parameters": [0.0, -8.0, 4.0]},
+                {"defined_transformation": "large-object"}
+            ]
+        },
+        "b8": {
+            "shape": "cube",
+            "material": "white-material",
+            "transformations": [
+                {"transformation": "translate", "parameters": [-0.5, -8.5, 8.0]},
+                {"defined_transformation": "large-object"}
+            ]
+        }
+    }
+}
