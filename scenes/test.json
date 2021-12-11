@@ -73,6 +73,20 @@
             "shininess": 0.0,
             "reflective": 0.0
         },
+        "sunshade-bar-material": {
+            "color": [0.4, 0.0, 0.2],
+            "ambient": 0.5,
+            "diffuse": 0.5
+        },
+        "sunshade-material": {
+            "color": [0.86, 0.08, 0.24],
+            "ambient": 0.5,
+            "diffuse": 0.2,
+            "specular": 1.0,
+            "shininess": 100.0,
+            "reflective": 0.3,
+            "transparency": 0.0
+        },
         "mirror-material": {
             "color": [0.1, 0.5, 0.1],
             "ambient": 0.3,
@@ -118,7 +132,7 @@
             "min-y": 0.0,
             "max-y": 1.0,
             "transformations": [
-                {"transformation": "translate", "parameters": [-2, 0.0, -1.75]},
+                {"transformation": "translate", "parameters": [-2.0, 0.0, -1.75]},
                 {"transformation": "scale", "parameters": [0.2, 1.0, 0.2]}
             ]
         },
@@ -128,6 +142,60 @@
             "transformations": [
                 {"transformation": "translate", "parameters": [-2.0, 1.0, -1.75]},
                 {"transformation": "scale", "parameters": [1.0, 0.1, 1.0]}
+            ]
+        },
+        "sunshade-bar": {
+            "shape": "cylinder",
+            "material": "sunshade-bar-material",
+            "min-y": 0.0,
+            "max-y": 1.5,
+            "transformations": [
+                {"transformation": "translate", "parameters": [-2.0, 1.0, -1.75]},
+                {"transformation": "scale", "parameters": [0.05, 1.5, 0.05]}
+            ]
+        },
+        "sunshade-side-1": {
+            "shape": "triangle",
+            "material": "sunshade-material",
+            "p1": [-1.5, 0.0, -4.0],
+            "p2": [1.5, 0.0, -4.0],
+            "p3": [0.0, 0.7, -3.0],
+            "transformations": [
+                {"transformation": "translate", "parameters": [-0.5, 2.0, 1.0]},
+                {"transformation": "rotate-y", "parameters": [30.0]}
+            ]
+        },
+        "sunshade-side-2": {
+            "shape": "triangle",
+            "material": "sunshade-material",
+            "p1": [-1.5, 0.0, -2.0],
+            "p2": [1.5, 0.0, -2.0],
+            "p3": [0.0, 0.7, -3.0],
+            "transformations": [
+                {"transformation": "translate", "parameters": [-0.5, 2.0, 1.0]},
+                {"transformation": "rotate-y", "parameters": [30.0]}
+            ]
+        },
+        "sunshade-side-3": {
+            "shape": "triangle",
+            "material": "sunshade-material",
+            "p1": [-1.5, 0.0, -2.0],
+            "p2": [-1.5, 0.0, -4.0],
+            "p3": [0.0, 0.7, -3.0],
+            "transformations": [
+                {"transformation": "translate", "parameters": [-0.5, 2.0, 1.0]},
+                {"transformation": "rotate-y", "parameters": [30.0]}
+            ]
+        },
+        "sunshade-side-4": {
+            "shape": "triangle",
+            "material": "sunshade-material",
+            "p1": [1.5, 0.0, -2.0],
+            "p2": [1.5, 0.0, -4.0],
+            "p3": [0.0, 0.7, -3.0],
+            "transformations": [
+                {"transformation": "translate", "parameters": [-0.5, 2.0, 1.0]},
+                {"transformation": "rotate-y", "parameters": [30.0]}
             ]
         },
         "mirror": {

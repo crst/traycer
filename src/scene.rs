@@ -14,7 +14,7 @@ use crate::light::PointLight;
 use crate::linalg::matrix::Matrix;
 use crate::linalg::tuple::Tuple;
 use crate::material::Material;
-use crate::shapes::{shape::Shape, sphere::Sphere, plane::Plane, cube::Cube, cylinder::Cylinder};
+use crate::shapes::{shape::Shape, sphere::Sphere, plane::Plane, cube::Cube, cylinder::Cylinder, triangle::Triangle};
 use crate::world::World;
 
 use serde::{Deserialize};
@@ -72,6 +72,11 @@ pub struct SceneObject {
     pub min_y: Option<f64>,
     pub max_y: Option<f64>,
     pub closed: Option<bool>,
+
+    // Triangle specific parameters
+    pub p1: Option<Vec<f64>>,
+    pub p2: Option<Vec<f64>>,
+    pub p3: Option<Vec<f64>>,
 
     pub material: Option<String>,
     pub color: Option<Vec<f64>>,
@@ -275,6 +280,18 @@ pub fn make_world(scene: &Scene) -> World {
                 c.max_y = value.max_y.unwrap_or(c.max_y);
                 c.closed = value.closed.unwrap_or(c.closed);
                 c
+            },
+            "triangle" => {
+                let p1 = value.p1.as_ref().unwrap();
+                let p2 = value.p2.as_ref().unwrap();
+                let p3 = value.p3.as_ref().unwrap();
+                Box::new(Triangle::new(
+                    Tuple::point(p1[0], p1[1], p1[2]),
+                    Tuple::point(p2[0], p2[1], p2[2]),
+                    Tuple::point(p3[0], p3[1], p3[2]),
+                    Matrix::identity(4),
+                    Material::default()
+                ))
             },
             _ => panic!("Undefined shape: {:?}!", value.shape)
         };
